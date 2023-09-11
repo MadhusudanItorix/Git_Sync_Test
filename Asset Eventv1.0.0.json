@@ -1,0 +1,246 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Asset Event",
+        "description": "Swagger Documentation for Asset Events",
+        "version": "v1.0.0"
+    },
+    "paths": {
+        "/events": {
+            "x-description": "Events CURD Operations",
+            "get": {
+                "summary": "Get AssetEvent By UUID",
+                "description": "Get AssestsEvents By UUID",
+                "parameters": [
+                    {
+                        "x-key": 1,
+                        "name": "EventUUID",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "x-key": 2,
+                        "name": "22",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "x-key": 3,
+                        "name": "help",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "#/parameters/Authorization"
+                    }
+                ],
+                "operationId": "getEventById",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/AssetEvent"
+                        }
+                    }
+                },
+                "tags": [],
+                "deprecated": true
+            },
+            "post": {
+                "summary": "Create an AssetEvent",
+                "description": "Create an AssetEvent",
+                "parameters": [
+                    {
+                        "name": "assetEvent",
+                        "in": "body",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/AssetEvent"
+                        }
+                    },
+                    {
+                        "$ref": "#/parameters/Authorization"
+                    }
+                ],
+                "operationId": "createAssetEvent",
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/AssetEvent"
+                        }
+                    }
+                },
+                "tags": [],
+                "security": [],
+                "deprecated": true
+            },
+            "put": {
+                "summary": "Update an AssetEvent",
+                "description": "Update an AssetEvent",
+                "parameters": [
+                    {
+                        "name": "assetEvent",
+                        "in": "body",
+                        "description": "",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/AssetEvent"
+                        }
+                    },
+                    {
+                        "$ref": "#/parameters/EventUUID"
+                    },
+                    {
+                        "$ref": "#/parameters/Authorization"
+                    }
+                ],
+                "operationId": "updateEvent",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/AssetEvent"
+                        }
+                    }
+                },
+                "tags": [],
+                "security": [],
+                "deprecated": true
+            },
+            "delete": {
+                "summary": "Delete an Asset Event",
+                "description": "Delete an Asset Event",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/EventUUID"
+                    },
+                    {
+                        "$ref": "#/parameters/Authorization"
+                    }
+                ],
+                "operationId": "deleteEvent",
+                "responses": {
+                    "204": {
+                        "description": ""
+                    }
+                },
+                "tags": [],
+                "security": [],
+                "deprecated": true
+            }
+        }
+    },
+    "schemes": [
+        "https"
+    ],
+    "x-servers": [],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "tags": [],
+    "basePath": "/v1",
+    "host": "mock.apiwiz.io",
+    "definitions": {
+        "AssetEvent": {
+            "type": "object",
+            "properties": {
+                "EventUUID": {
+                    "type": "string",
+                    "example": "de7acda2-6b5e-11ed-a1eb-0242ac120002"
+                },
+                "SiteUUID": {
+                    "type": "string",
+                    "example": "de7acda2-6b5e-11ed-a1eb-0242ac120034"
+                },
+                "AssetEventType": {
+                    "type": "string",
+                    "example": "Sheaing"
+                },
+                "SupplyChhainHop": {
+                    "type": "string",
+                    "example": "SCH-23JK"
+                },
+                "InputAssetsUUID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "example": [
+                        "de7acda2-6b5e-11ed-a1eb-0242ac120049",
+                        "de7acda2-6b5e-11ed-a1eb-0242ac120052"
+                    ]
+                },
+                "OutputAssetUUID": {
+                    "type": "string",
+                    "example": "de7acda2-6b5e-11ed-a1eb-0242ac120082"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {},
+    "parameters": {
+        "EventUUID": {
+            "name": "EventUUID",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-newAdded": true
+        },
+        "Authorization": {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "type": "string",
+            "x-newAdded": true
+        },
+        "Accept": {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "type": "string",
+            "x-newAdded": true
+        }
+    },
+    "x-mock": true,
+    "x-metadata": {
+        "metadata": {
+            "swaggerName": "21e47161133c4d5ab4977a8befb2b471",
+            "revision": 1,
+            "documentation": [],
+            "category": [
+                {
+                    "name": "Unsorted",
+                    "paths": [],
+                    "definitions": [
+                        "AssetEvent"
+                    ]
+                },
+                {
+                    "name": "Events",
+                    "paths": [
+                        "/events"
+                    ],
+                    "definitions": []
+                }
+            ],
+            "models": [
+                {
+                    "dataDictionaryId": "637dd6ca79a62f72fe82fa64",
+                    "dataDictionaryRevision": "Revision 1",
+                    "dataDictionary": "Asset Classification",
+                    "modelName": "AssetEvent",
+                    "modelId": "db77439d0be14eb5b8b0e2e1453d069f",
+                    "revision": 1
+                }
+            ]
+        }
+    }
+}
